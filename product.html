@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-NG">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product — New Leaf</title>
+  <meta name="theme-color" content="#123C32">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css"><link rel="stylesheet" href="css/styles.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+<div data-header></div>
+<main id="main">
+<div class="container">
+  <div class="page-head" style="padding-bottom:var(--nl-s5)">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="shop.html">Shop</a><span>/</span><span data-crumb></span></nav>
+  </div>
+  <div class="pdp">
+    <div class="pdp-gallery">
+      <div class="ph r-1x1" data-label="Main product image"></div>
+      <div class="thumbs"><div class="ph r-1x1" data-label="1"></div><div class="ph r-1x1" data-label="2"></div><div class="ph r-1x1" data-label="3"></div><div class="ph r-1x1" data-label="4"></div></div>
+    </div>
+    <div class="pdp-info">
+      <div style="display:flex;gap:var(--nl-s2);flex-wrap:wrap"><span class="tag tag-demo">Demo product</span><span class="tag tag-outline" data-cat></span></div>
+      <h1 data-name style="font-size:var(--nl-h2)"></h1>
+      <p class="price-pending" data-price style="font-size:var(--nl-body-lg)"></p>
+      <span class="status status-wait">Availability to be confirmed</span>
+      <p class="muted">Product description will be added by the New Leaf team.</p>
+      <hr class="rule">
+      <div style="display:flex;gap:var(--nl-s3);flex-wrap:wrap;align-items:center">
+        <div class="qty" role="group" aria-label="Quantity"><button type="button" data-dec aria-label="Decrease quantity">−</button><output data-qty aria-live="polite">1</output><button type="button" data-inc aria-label="Increase quantity">+</button></div>
+        <button class="btn btn-primary" type="button" data-add style="flex:1;min-width:200px">Add to cart</button>
+      </div>
+      <a class="btn btn-secondary" data-wa href="#">Ask about this item on WhatsApp</a>
+      <div class="accordion">
+        <details><summary>Details</summary><div>To be added.</div></details>
+        <details><summary>Delivery</summary><div>Delivery options and costs will be confirmed at launch.</div></details>
+        <details><summary>Returns</summary><div>Returns policy to be added.</div></details>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="section band-white">
+  <div class="container"><div class="section-head"><h2>You may also like</h2></div><div class="rail" id="more" data-rail data-products="featured"></div></div>
+</section>
+<script>
+document.addEventListener("nl:ready", () => {
+  const id = new URLSearchParams(location.search).get("id");
+  const p = PRODUCTS.find(x => x.id === id) || PRODUCTS[0];
+  document.title = `${p.name} — New Leaf`;
+  document.querySelector("[data-crumb]").textContent = p.name;
+  document.querySelector("[data-name]").textContent = p.name;
+  document.querySelector("[data-cat]").textContent = categoryName(p.category);
+  document.querySelector("[data-price]").textContent = formatPrice(p.price);
+  let qty = 1; const out = document.querySelector("[data-qty]");
+  document.querySelector("[data-inc]").onclick = () => { qty = Math.min(99, qty + 1); out.textContent = qty; };
+  document.querySelector("[data-dec]").onclick = () => { qty = Math.max(1, qty - 1); out.textContent = qty; };
+  document.querySelector("[data-add]").onclick = () => { Cart.add(p.id, qty); toast(`Added ${qty} × ${p.name} to cart`); };
+});
+</script>
+</main>
+<div data-footer></div>
+</body>
+</html>

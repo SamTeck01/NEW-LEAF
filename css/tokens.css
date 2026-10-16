@@ -1,0 +1,59 @@
+/* New Leaf design tokens — the single source for web (Lovable) and app (FlutterFlow).
+   Change a value here, not in a component. */
+:root {
+  /* Colour */
+  --nl-forest: #123C32;      /* primary: buttons, active nav, key headings */
+  --nl-emerald: #21866B;     /* secondary: links, secondary actions, positive states */
+  --nl-ivory: #F7F6F0;       /* page background */
+  --nl-white: #FFFFFF;       /* surfaces: cards, forms, checkout, panels */
+  --nl-gold: #C7A76C;        /* accent: hairlines, small highlights. Never text on white */
+  --nl-charcoal: #202925;    /* primary text */
+  --nl-slate: #68736D;       /* secondary text */
+  --nl-sage: #DDE4DE;        /* borders, dividers, input outlines */
+  --nl-success: #237A50;
+  --nl-error: #B42332;
+
+  /* Derived (tints only — no new hues) */
+  --nl-forest-hover: #0C2C24;
+  --nl-emerald-tint: #E8F3EF;
+  --nl-error-tint: #FBEDEE;
+  --nl-on-forest-muted: rgba(247, 246, 240, 0.72);
+
+  /* Type */
+  --nl-font-heading: "Manrope", system-ui, sans-serif;
+  --nl-font-body: "Inter", system-ui, sans-serif;
+  --nl-display: clamp(2.5rem, 1.6rem + 3.6vw, 4.25rem); /* 40 → 68 */
+  --nl-h1: clamp(2rem, 1.5rem + 2vw, 3rem);            /* 32 → 48 */
+  --nl-h2: clamp(1.625rem, 1.35rem + 1.1vw, 2.25rem);  /* 26 → 36 */
+  --nl-h3: 1.25rem;   /* 20 */
+  --nl-h4: 1.0625rem; /* 17 */
+  --nl-body-lg: 1.125rem; /* 18 */
+  --nl-body: 1rem;        /* 16 */
+  --nl-small: 0.875rem;   /* 14 */
+  --nl-caption: 0.75rem;  /* 12 */
+
+  /* Space — 4px base */
+  --nl-s1: 4px;  --nl-s2: 8px;  --nl-s3: 12px; --nl-s4: 16px;
+  --nl-s5: 24px; --nl-s6: 32px; --nl-s7: 48px; --nl-s8: 64px;
+  --nl-s9: 96px; --nl-s10: 128px;
+
+  /* Shape & depth — restrained */
+  --nl-radius-sm: 6px;   /* inputs, tags */
+  --nl-radius: 10px;     /* buttons, cards */
+  --nl-radius-lg: 16px;  /* sheets, large media */
+  --nl-shadow: 0 1px 2px rgba(18, 60, 50, 0.06), 0 8px 24px rgba(18, 60, 50, 0.06);
+
+  /* Layout */
+  --nl-max: 1200px;
+  --nl-gutter: 16px;
+  --nl-header-h: 64px;
+  --nl-tap: 44px;
+
+  /* Motion — small and purposeful */
+  --nl-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --nl-fast: 150ms;
+  --nl-base: 240ms;
+}
+@media (min-width: 768px) { :root { --nl-gutter: 32px; --nl-header-h: 72px; } }
+@media (min-width: 1200px) { :root { --nl-gutter: 48px; } }
+@media (prefers-reduced-motion: reduce) { :root { --nl-fast: 0ms; --nl-base: 0ms; } }

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en-NG">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Leaf — Shop simply. Pay across borders.</title>
+  <meta name="description" content="New Leaf connects shoppers and businesses through simple digital shopping and Nigerian and international payment options. Developed by DataWeave.">
+  <meta name="theme-color" content="#123C32">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css"><link rel="stylesheet" href="css/styles.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+<div data-header></div>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="ph hero-media" data-label="Hero image · products in a clean, warm setting · 21:9 desktop / 4:5 mobile"></div>
+      <div class="hero-copy">
+        <div style="display:grid;gap:var(--nl-s4)">
+          <span class="eyebrow">Shopping · Payments · Connected commerce</span>
+          <h1>Shop simply. Pay with confidence.</h1>
+        </div>
+        <div class="hero-side">
+          <p>New Leaf brings everyday shopping and Nigerian and international payment options together in one place, built for customers and the businesses they buy from.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="shop.html">Explore Products <span class="arrow">→</span></a>
+            <a class="btn btn-secondary" href="about.html">Discover New Leaf</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="band-white" style="padding:var(--nl-s6) 0">
+    <div class="container" style="display:grid;gap:var(--nl-s4)">
+      <span class="eyebrow">Browse by category</span>
+      <nav class="chips" aria-label="Categories">
+        <a class="chip" href="shop.html">All</a>
+        <a class="chip" href="shop.html?c=fashion">Fashion</a>
+        <a class="chip" href="shop.html?c=electronics">Electronics</a>
+        <a class="chip" href="shop.html?c=home">Home &amp; Living</a>
+        <a class="chip" href="shop.html?c=beauty">Beauty</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Featured rail -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div style="display:grid;gap:var(--nl-s3)">
+          <span class="eyebrow">Featured</span>
+          <h2>Selected for you</h2>
+        </div>
+        <div style="display:flex;gap:var(--nl-s4);align-items:center">
+          <a class="btn-text" href="shop.html" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none">View all <span class="arrow">→</span></a>
+          <div class="rail-controls">
+            <button class="icon-btn" type="button" aria-label="Previous products" data-rail-prev="featured-rail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 6l-6 6 6 6"/></svg></button>
+            <button class="icon-btn" type="button" aria-label="Next products" data-rail-next="featured-rail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="rail" id="featured-rail" data-rail data-products="featured"></div>
+    </div>
+  </section>
+
+  <!-- Statement band -->
+  <section class="section band-forest">
+    <div class="container statement reveal">
+      <hr class="gold-rule" style="margin:0">
+      <p class="big">Commerce should feel simple, wherever you buy and whoever you buy from.</p>
+      <a class="btn btn-ghost-light" href="about.html">Learn more</a>
+    </div>
+  </section>
+
+  <!-- Feature: shopping -->
+  <section class="section band-white">
+    <div class="container split reveal">
+      <div class="ph r-4x5" data-label="Lifestyle image · shopping"></div>
+      <div class="split-copy">
+        <span class="eyebrow">Shop</span>
+        <h2>Everyday products, one clear checkout.</h2>
+        <p class="muted">Browse by category, see what is available, and check out with a transparent order summary. No hidden steps.</p>
+        <div class="chips" style="margin-top:var(--nl-s2)">
+          <a class="chip" href="shop.html?c=fashion">Fashion</a><a class="chip" href="shop.html?c=electronics">Electronics</a><a class="chip" href="shop.html?c=home">Home</a>
+        </div>
+        <a class="btn btn-primary" href="shop.html" style="justify-self:start;margin-top:var(--nl-s3)">Explore Products <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: payments (coming soon) -->
+  <section class="section">
+    <div class="container split reverse reveal">
+      <div class="ph r-4x5" data-label="Image · connected commerce / payments interface"></div>
+      <div class="split-copy">
+        <span class="tag tag-gold" style="justify-self:start">Coming soon</span>
+        <h2>Payments that cross borders.</h2>
+        <p class="muted">We are building Nigerian and international payment options, and Nigeria–China supplier payments and transfers for businesses. These services are not live yet and will launch only once licensed partners and compliance requirements are confirmed.</p>
+        <a class="btn btn-secondary" href="payments.html" style="justify-self:start;margin-top:var(--nl-s3)">See what's planned</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section band-white">
+    <div class="container">
+      <div class="section-head"><div style="display:grid;gap:var(--nl-s3)"><span class="eyebrow">Why New Leaf</span><h2>Built on trust, designed for growth.</h2></div></div>
+      <div class="values cols">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><div><h3>Clear and transparent</h3><p class="muted" style="margin-top:6px">Prices, availability and totals shown plainly before you pay.</p></div></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 2.5 14.4 0 17M12 3.5c-2.5 2.6-2.5 14.4 0 17"/></svg><div><h3>Connected commerce</h3><p class="muted" style="margin-top:6px">One place for shoppers and businesses, at home and abroad.</p></div></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 20V10M12 10c0-3.5 2.5-6 6-6 0 3.5-2.5 6-6 6zM12 13c0-2.8-2-4.8-4.8-4.8 0 2.8 2 4.8 4.8 4.8z"/></svg><div><h3>Room to grow</h3><p class="muted" style="margin-top:6px">New products and services added as we grow with our customers.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social -->
+  <section class="section" style="padding-bottom:0">
+    <div class="container section-head" style="margin-bottom:var(--nl-s5)">
+      <div style="display:grid;gap:var(--nl-s3)"><span class="eyebrow">Social</span><h2>Follow New Leaf</h2></div>
+      <span class="muted small">Handle to be added</span>
+    </div>
+    <div class="social-strip">
+      <div class="ph" data-label="Post"></div><div class="ph" data-label="Post"></div><div class="ph" data-label="Post"></div>
+      <div class="ph" data-label="Post"></div><div class="ph" data-label="Post"></div><div class="ph" data-label="Post"></div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section newsletter">
+    <div class="container split" style="align-items:end">
+      <div style="display:grid;gap:var(--nl-s3)"><span class="eyebrow">Newsletter</span><h2>Be first to know when we launch.</h2></div>
+      <form data-newsletter>
+        <label class="sr-only" for="nl-email">Email</label>
+        <input class="input" id="nl-email" type="email" placeholder="Email address" required autocomplete="email">
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<div data-footer></div>
+</body>
+</html>
