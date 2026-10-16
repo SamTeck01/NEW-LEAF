@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="New Leaf">
+  <!-- Two connected leaf halves: growth + commerce across borders, moving up and forward -->
+  <path d="M5 25C5 13.4 13.4 5 25 5L5 25Z" fill="#123C32"/>
+  <path d="M7.6 27.4L27.4 7.6C27.4 19.2 19.2 27.4 7.6 27.4Z" fill="#21866B"/>
+</svg>

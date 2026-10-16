@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-NG">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop — New Leaf</title>
+  <meta name="theme-color" content="#123C32">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css"><link rel="stylesheet" href="css/styles.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+<div data-header></div>
+<main id="main">
+<div class="container">
+  <div class="page-head">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Shop</span></nav>
+    <h1>Shop</h1>
+    <p class="muted">All items shown are demo products. The real catalogue and prices will be added by the New Leaf team.</p>
+  </div>
+  <div class="toolbar" id="search">
+    <div class="chips" role="group" aria-label="Filter by category" data-filters></div>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>
+      <label class="sr-only" for="q">Search products</label>
+      <input class="input" id="q" type="search" placeholder="Search products" autocomplete="off">
+    </div>
+  </div>
+  <p class="muted small" data-result-count aria-live="polite" style="margin-bottom:var(--nl-s5)"></p>
+  <div class="grid" data-grid></div>
+  <div class="empty" data-empty hidden><h3>No products found</h3><p class="muted">Try another search or category.</p></div>
+  <div style="height:var(--nl-s8)"></div>
+</div>
+<script>
+document.addEventListener("nl:ready", () => {
+  const params = new URLSearchParams(location.search);
+  let cat = params.get("c") || "all";
+  const q = document.getElementById("q");
+  const filters = document.querySelector("[data-filters]");
+  const all = [{ id: "all", name: "All" }, ...CATEGORIES];
+  filters.innerHTML = all.map(c => `<button type="button" class="chip" data-c="${c.id}">${c.name}</button>`).join("");
+  function render() {
+    filters.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.c === cat)));
+    const term = q.value.trim().toLowerCase();
+    const list = PRODUCTS.filter(p => (cat === "all" || p.category === cat) && (!term || p.name.toLowerCase().includes(term)));
+    document.querySelector("[data-grid]").innerHTML = list.map(productCard).join("");
+    document.querySelector("[data-empty]").hidden = list.length > 0;
+    document.querySelector("[data-result-count]").textContent = `${list.length} product${list.length === 1 ? "" : "s"}`;
+  }
+  filters.addEventListener("click", e => { const b = e.target.closest("[data-c]"); if (!b) return; cat = b.dataset.c; history.replaceState(null, "", cat === "all" ? "shop.html" : `shop.html?c=${cat}`); render(); });
+  q.addEventListener("input", render);
+  render();
+});
+</script>
+</main>
+<div data-footer></div>
+</body>
+</html>
